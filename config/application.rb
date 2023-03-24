@@ -18,6 +18,15 @@ module SaiyouMondai
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.javascripts false
+      g.stylesheets false
+      g.helper false
+      g.template_engine false
+      g.test_framework :rspec
+    end
+
+    config.api_only = true
     config.middleware.use ActionDispatch::Flash
   end
 end
