@@ -4,7 +4,7 @@ RSpec.describe "Tasks", type: :request do
   describe "GET /tasks" do
     subject {get(tasks_path)}
     before{create_list(:task, 3)}
-    fit "タスクの一覧が取得できる" do
+    it "タスクの一覧が取得できる" do
       subject
       res = JSON.parse(response.body)
       expect(res.length).to eq 3
